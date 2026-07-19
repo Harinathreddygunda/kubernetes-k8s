@@ -1,0 +1,29 @@
+<svg width="680" height="320" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Docker image layers</title>
+<desc>An image is a stack of read-only layers; a running container adds one writable layer on top.</desc>
+<style>
+text{font-family:Arial,Helvetica,sans-serif;}
+.top{fill:#EEEDFE;stroke:#534AB7;stroke-width:1;}
+.layer{fill:#F1EFE8;stroke:#5F5E5A;stroke-width:1;}
+.th{font-size:14px;font-weight:bold;fill:#26215C;}
+.t{font-size:13px;fill:#2C2C2A;}
+.ts{font-size:11px;fill:#444441;}
+</style>
+
+<rect x="180" y="30" width="320" height="44" rx="6" class="top"/>
+<text x="340" y="56" text-anchor="middle" class="th">Container writable layer</text>
+
+<rect x="180" y="84" width="320" height="40" rx="6" class="layer"/>
+<text x="340" y="108" text-anchor="middle" class="t">Layer 4: COPY . /app</text>
+
+<rect x="180" y="132" width="320" height="40" rx="6" class="layer"/>
+<text x="340" y="156" text-anchor="middle" class="t">Layer 3: RUN npm install</text>
+
+<rect x="180" y="180" width="320" height="40" rx="6" class="layer"/>
+<text x="340" y="204" text-anchor="middle" class="t">Layer 2: WORKDIR /app</text>
+
+<rect x="180" y="228" width="320" height="40" rx="6" class="layer"/>
+<text x="340" y="252" text-anchor="middle" class="t">Layer 1: FROM node:20-alpine</text>
+
+<text x="340" y="290" text-anchor="middle" class="ts">Layers 1-4 are read-only and cached; only the top layer changes at runtime</text>
+</svg>
